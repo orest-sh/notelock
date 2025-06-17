@@ -1,21 +1,23 @@
 from app.core.db import engine
 from app.models.note import NoteOrm
 from app.schemas.note import (
-    NoteReadSchema, NoteIdSchema, NoteCreateSchema, NoteCountSchema
+    NoteReadSchema, NoteIdSchema, NoteCreateSchema
 )
 from app.dependencies import AdminDep
 
 from app.helpers.auto_deletion import autodelete_job
 from app.helpers.crypto import decrypt_and_decompress, encrypt_and_compress
 
-from fastapi import status
+from fastapi import Depends, status
 from fastapi.routing import APIRouter
 from fastapi import BackgroundTasks, HTTPException
+
+from fastapi_limiter.depends import RateLimiter
 
 from bson import ObjectId
 from bson.errors import InvalidId
 
-router = APIRouter(prefix='/notes')
+router = APIRouter(prefix='/notes', dependencies=[Depends(RateLimiter(times=1, seconds=10))])
 
 
 @router.get("/count", response_model=int)

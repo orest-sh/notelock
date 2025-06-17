@@ -16,7 +16,3 @@ class NoteCreateSchema(NoteBase):
 
 class NoteReadSchema(NoteBase):
     pass
-
-
-class NoteCountSchema(BaseModel):
-    count: int

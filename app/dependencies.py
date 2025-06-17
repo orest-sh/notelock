@@ -1,4 +1,5 @@
 from fastapi import Depends, Request
+
 from app.core.settings import settings
 
 from typing import Annotated

@@ -4,6 +4,7 @@ Notelock is a lightweight, secure FastAPI service designed for creating and read
 ## Features
 - Encryption
 - Automatically deleted after being read
+- Rate limiting
 
 ## Getting started
 - Clone the repository

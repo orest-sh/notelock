@@ -26,3 +26,7 @@ docker build -t notelock .
 ```bash
 docker run -p 80:8000 -d notelock
 ```
+
+## Contributing
+Contributions to NoteLock are welcome! If you encounter any issues or have suggestions for improvements,
+please feel free to open an issue or submit a pull request.

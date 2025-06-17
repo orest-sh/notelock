@@ -18,14 +18,13 @@ cd notelock
 ```bash
 cp .env.example .env
 ```
-- Build docker image
+- Run docker compose
 ```bash
-docker build -t notelock .
+docker compose up -d
 ```
-- Run docker container
-```bash
-docker run -p 80:8000 -d notelock
-```
+
+## Usage
+- Go to http://localhost:8000/docs to see openapi docs
 
 ## Contributing
 Contributions to NoteLock are welcome! If you encounter any issues or have suggestions for improvements,
